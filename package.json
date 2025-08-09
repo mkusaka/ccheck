@@ -1,0 +1,55 @@
+{
+  "name": "claude-code-checkpointing-hook",
+  "version": "1.0.0",
+  "description": "Automatic git-based checkpointing system for Claude Code that creates snapshots before file modifications",
+  "main": "dist/checkpoint-manager.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "lint": "oxlint src",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "install-hook": "node dist/install.js",
+    "uninstall-hook": "node dist/uninstall.js"
+  },
+  "bin": {
+    "ckpt": "./dist/cli/ckpt.js"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "checkpoint",
+    "git",
+    "backup",
+    "version-control",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "packageManager": "pnpm@8.14.0",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0",
+    "fs-extra": "^11.2.0",
+    "inquirer": "^9.2.12",
+    "minimatch": "^9.0.3"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/inquirer": "^9.0.7",
+    "@types/minimatch": "^5.1.2",
+    "@types/node": "^20.10.5",
+    "@vitest/ui": "^1.1.0",
+    "oxlint": "^0.0.21",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10",
+    "vitest": "^1.1.0"
+  }
+}
