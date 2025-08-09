@@ -36,11 +36,7 @@ jobs:
     
     - name: Format check
       run: |
-        pnpm run format -- --check
-        if [ $? -ne 0 ]; then
-          echo "Format check failed. Please run 'pnpm run format' to fix formatting issues."
-          exit 1
-        fi
+        pnpm prettier --check "src/**/*.ts"
     
     - name: Lint
       run: pnpm run lint
