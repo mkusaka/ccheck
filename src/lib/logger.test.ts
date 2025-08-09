@@ -7,9 +7,9 @@ import { Logger } from './logger';
 vi.mock('fs');
 vi.mock('os', () => ({
   default: {
-    homedir: vi.fn(() => '/mock/home')
+    homedir: vi.fn(() => '/mock/home'),
   },
-  homedir: vi.fn(() => '/mock/home')
+  homedir: vi.fn(() => '/mock/home'),
 }));
 
 describe('Logger', () => {
