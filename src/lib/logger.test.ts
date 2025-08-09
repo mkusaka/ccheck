@@ -44,6 +44,7 @@ describe('Logger', () => {
 
     it('should not create log directory if it already exists', () => {
       (fs.existsSync as ReturnType<typeof vi.fn>).mockReturnValue(true);
+      (fs.mkdirSync as ReturnType<typeof vi.fn>).mockClear();
       new Logger();
       expect(fs.mkdirSync).not.toHaveBeenCalled();
     });
